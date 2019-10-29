@@ -2,18 +2,14 @@
 function preload(){
   // put preload code here
 }
-
-
+var startingFrame;
 function setup() {
 
   createCanvas(windowWidth,windowHeight);
-  background("black");
+  // background("yellow");
 
   var myUrl = new URL (window.location.href);
   startingFrame = myUrl.searchParams.get("startFrame")*1
-
-
-
 
 
 
@@ -22,15 +18,15 @@ function setup() {
 }
 
 function draw() {
-  background(20);
-    fill("yellow");
-    textFont("staatliches");
-    textSize(180);
-    text (frameCount+ startingFrame, 70, 200);
-    textSize(80);
-    text ("are you on time?", 70, 70);
+background("yellow");
+  fill("red");
+  textFont("staatliches");
+  textSize(180);
+  text (startingFrame+frameCount, 70, 200);
+  textSize(80);
+  text ("are you on time?", 70, 70);
   // put drawing code here
 }
 function mouseClicked() {
-  window.open("index0.html?startFrame=" +(startingFrame+ frameCount), "_self");
+  window.open("index.html?startFrame="+(startingFrame+frameCount), "_self");
 }
